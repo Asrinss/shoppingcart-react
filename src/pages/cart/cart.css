@@ -1,0 +1,98 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cart h1 {
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartItem {
+  width: 700px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  margin: 30px;
+}
+
+.cartItem img {
+  width: 200px;
+  border-radius: 15px;
+}
+
+.cartItem .description {
+  width: 100%;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.countHandler input {
+  width: 40px;
+  text-align: center;
+  font-weight: bolder;
+  margin: 0 10px;
+}
+
+.buy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.buy p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.buy button {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(19, 19, 19);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.buy button:hover {
+  background-color: rgb(34, 34, 34);
+}
+
+.payment-methods {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-methods h2 {
+  margin-bottom: 10px;
+}
+
+.payment-methods div {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.payment-methods input {
+  margin-right: 10px;
+}
