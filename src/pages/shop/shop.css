@@ -7,47 +7,96 @@
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     place-items: center;
+    gap: 2rem;
+    padding: 2rem;
   }
   
   .product {
     border-radius: 15px;
     width: 300px;
-    height: 350px;
-    margin: 100px;
+    height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    position: relative;
+    padding: 1rem;
   }
   
   .product img {
-    width: 250px;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
   }
   
   .product .description {
     text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
-  .product:hover {
-    transition: 0.3s ease-in;
-    cursor: pointer;
+  .product .description p {
+    margin: 0;
+  }
+  
+  .product .description p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .product .description p:last-child {
+    font-size: 1.1rem;
+    color: #4CAF50;
   }
   
   .addToCartBttn {
     background-color: transparent;
     border: 2px solid rgb(19, 19, 19);
     min-width: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 0.5rem 1rem;
     border-radius: 15px;
+    margin-top: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
   }
   
   .addToCartBttn:hover {
     background-color: rgb(19, 19, 19);
     color: white;
-    cursor: pointer;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 1.2rem;
+    grid-column: 1 / -1;
+  }
+  
+  @media (max-width: 768px) {
+    .shopTitle {
+      margin-top: 60px;
+      font-size: 30px;
+    }
+  
+    .products {
+      padding: 1rem;
+    }
+  
+    .product {
+      width: 100%;
+      max-width: 300px;
+    }
   }

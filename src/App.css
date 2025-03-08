@@ -3,9 +3,68 @@
   height: auto;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
   padding: 0;
   margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Performans optimizasyonları için CSS */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Content Visibility optimizasyonu */
+.product, .cartItem {
+  content-visibility: auto;
+  contain-intrinsic-size: 350px;
+}
+
+/* Scroll optimizasyonu */
+body {
+  scroll-behavior: smooth;
+  overflow-y: overlay;
+}
+
+/* Animasyon performansı için */
+.product, .cartItem, .navbar {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+footer {
+  margin-top: auto; /* Footer'ı sayfanın en altına iter */
 }
